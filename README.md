@@ -1,56 +1,56 @@
-# Selection Popup Assistant (Seçim Pop-up Asistanı)
+# Selection Popup Assistant 🚀
 
-Mouse ile web sayfalarında (özellikle NotebookLM, ChatGPT veya döküman okuma sayfalarında) metin seçtiğinizde beliren, Gemini API destekli ve Shadow DOM izolasyonlu premium bir okuma ve chat asistanı Chrome eklentisidir.
-
----
-
-## 🌟 Özellikler
-
-- **Shadow DOM İzolasyonu**: Eklentinin arayüzü ve tüm CSS stilleri Shadow DOM ile korunmaktadır. Ziyaret edilen web sitesinin CSS kuralları (reset CSS vb.) asistan panelinin görünümünü bozamaz; aynı şekilde asistanın kodları da ziyaret edilen siteyi etkilemez.
-- **Konuşma Geçmişi (Chat History)**: Seçtiğiniz metinle ilgili asistan panelinde sohbet edebilirsiniz. Yapay zeka konuşma boyunca önceki sorularınızı ve yanıtları hatırlar.
-- **Scroll Güvenliği (Overscroll Containment)**: Asistan panelinin içini kaydırırken ana sayfanın arka planda kayması (`scroll chaining`) tamamen engellenmiştir.
-- **Exit Gestures (Pratik Kapatma)**: `Esc` tuşuna basarak veya panel dışındaki boş bir alana tıklayarak paneli yumuşak bir fade/scale animasyonuyla kapatabilirsiniz.
-- **Premium Arayüz & Glassmorphism**: Yarı saydam arka plan, ince neon sınırlar, mikro animasyonlar ve şık yazı tipleriyle modern bir karanlık mod (dark mode) tasarımı sunar.
-- **Güvenli API Anahtarı Yönetimi**: Gemini API anahtarınız kod içerisinde sabit (hardcoded) tutulmaz. Eklentinin Ayarlar (Options) sayfası üzerinden tarayıcının yerel hafızasına (`chrome.storage.sync`) kaydedilir.
-- **CSP (Content Security Policy) Aşımı**: Web sitelerinin güvenlik politikalarına takılmamak adına istekler arka plan servis işçisi (`background.js`) üzerinden güvenli bir şekilde yönlendirilir.
+A premium Manifest V3 Chrome Extension powered by the Google Gemini API. Designed specifically for deep reading environments (like NotebookLM, ChatGPT, or long documents), this extension brings an isolated, glassmorphic chat assistant directly to your selected text, eliminating context switching and scroll fatigue.
 
 ---
 
-## 🚀 Kurulum Adımları
+## 🌟 Features
 
-Eklentiyi yerel geliştirici modu ile tarayıcınıza yüklemek için şu adımları izleyin:
-
-1. Bu depoyu (repository) bilgisayarınıza indirin veya klonlayın.
-2. Google Chrome tarayıcınızı açın ve adres çubuğuna `chrome://extensions/` yazarak gidin.
-3. Sağ üst köşede bulunan **Geliştirici modu** (Developer mode) seçeneğini aktif hale getirin.
-4. Sol üst köşede beliren **Paketlenmemiş öğe yükle** (Load unpacked) butonuna tıklayın.
-5. İndirdiğiniz/klonladığınız proje klasörünü seçerek yükleyin.
-
----
-
-## 🔑 Yapılandırma (API Anahtarı Ekleme)
-
-Eklentinin çalışabilmesi için bir Gemini API anahtarına ihtiyacınız vardır:
-
-1. Tarayıcınızın araç çubuğundaki eklentiler ikonuna tıklayarak **Selection Popup Assistant**'ı bulun.
-2. Sağ tıklayıp **Seçenekler** (Options) butonuna basın (veya `chrome://extensions/` sayfasında eklentinin detaylarına girerek "Uzantı seçenekleri" seçeneğine tıklayın).
-3. [Google AI Studio](https://aistudio.google.com/) üzerinden ücretsiz olarak alabileceğiniz API anahtarını kutucuğa yapıştırın ve **Ayarları Kaydet** butonuna tıklayın.
+* **Shadow DOM Isolation:** The assistant UI and all CSS styles are fully encapsulated inside a Shadow DOM. Target website CSS rules (like reset stylesheets) cannot distort the panel's appearance, and the extension's code will never interfere with the host website.
+* **Conversational Memory (Chat History):** Engage in deep follow-up discussions regarding your selected text. The AI remembers previous questions and responses throughout the active session.
+* **Scroll Lock & Safety (Overscroll Containment):** While scrolling inside the assistant panel, background scroll chaining on the main web page is completely blocked.
+* **Exit Gestures:** Easily close the panel with a smooth fade/scale micro-animation by pressing the `Esc` key or clicking anywhere outside the popup.
+* **Premium Glassmorphic UI:** Offers a modern dark-mode experience featuring a semi-transparent blurred background, subtle neon borders, micro-animations, and clean typography.
+* **Secure API Key Management:** Your Gemini API key is never hardcoded. It is securely saved to the browser's local synchronized storage (`chrome.storage.sync`) via the extension's Options page.
+* **CSP (Content Security Policy) Bypass:** To avoid web security policy blocks on strict platforms, all API requests are safely routed through a background service worker (`background.js`).
 
 ---
 
-## 💻 Kullanım Rehberi
+## 🚀 Installation Steps
 
-1. Herhangi bir web sayfasını açın (örneğin Wikipedia, ChatGPT veya NotebookLM). *Eğer sayfa zaten açıksa kurulum sonrası sayfayı bir kez yenileyin.*
-2. Okuduğunuz metinden herhangi bir bölümü farenizle (mouse) seçin.
-3. Seçtiğiniz metnin hemen altında belirecek olan mor renkli **Panel Aç** butonuna tıklayın.
-4. Açılan pencerede seçtiğiniz metnin önizlemesini göreceksiniz. Alttaki kutucuğa sorunuzu yazarak (`Enter` veya gönder butonu ile) asistanla konuşmaya başlayın.
-5. Paneli taşımak için üst başlık alanından tutup sürükleyebilirsiniz. Kapatmak için sağ üstteki **X** ikonuna basabilir, **Esc** tuşuna basabilir veya ekranın boş bir yerine tıklayabilirsiniz.
+Follow these steps to load the extension locally in Developer Mode:
+
+1. **Download the Code:** Clone or download this repository as a `.zip` file to your computer and extract it.
+2. **Open Extensions Page:** Open Google Chrome and navigate to `chrome://extensions/` in the address bar.
+3. **Enable Developer Mode:** Toggle the **Developer mode** switch in the top-right corner to active.
+4. **Load Unpacked:** Click the **Load unpacked** button that appears in the top-left corner.
+5. **Select Folder:** Choose the extracted project directory (the folder containing `manifest.json`) to install.
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## 🔑 Configuration (Adding Your API Key)
 
-- **Manifest V3** standardı
-- **HTML5 & Vanilla CSS3** (Cam efekti / Glassmorphic UI)
-- **Vanilla JavaScript** (ES6+)
-- **Google Gemini API** (Varsayılan model: `gemini-2.5-flash`)
+To bring your assistant to life, you need a Gemini API key:
+
+1. Click the extensions puzzle piece icon in your browser toolbar and find **Selection Popup Assistant**.
+2. Right-click it and select **Options** (or go to `chrome://extensions/`, click **Details** on the extension card, and click **Extension options**).
+3. Generate a free API key via [Google AI Studio](https://aistudio.google.com/), paste it into the input box, and click **Save Settings**.
+
+---
+
+## 💻 User Guide
+
+1. Open any web page (e.g., Wikipedia, ChatGPT, or NotebookLM). *Note: If the page was already open, refresh it once after installation.*
+2. Highlight/select any portion of text with your mouse cursor.
+3. Click the purple **Open Panel** action button that dynamically pops up near your selection.
+4. The panel will open, displaying a preview of your selected context. Type your question in the input box below and hit `Enter` (or click the send icon) to start chatting.
+5. **Controls:** Drag the window by holding down on the top header bar. Close it by clicking the `X` icon, hitting `Esc`, or clicking outside the window.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Manifest V3** Architecture
+* HTML5 & Vanilla CSS3 (Glassmorphic Styling)
+* Vanilla JavaScript (ES6+)
+* Google Gemini API (Default model: `gemini-2.5-flash`)
